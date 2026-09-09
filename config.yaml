@@ -1,0 +1,89 @@
+baseURL: "https://yourname.com"
+languageCode: "zh-cn"
+title: "我的博客"
+theme: "PaperMod"
+enableGitInfo: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# 永久链接格式
+permalinks:
+  posts: "/posts/:slug/"
+
+# 分页
+pagination:
+  pagerSize: 10
+
+# 分类与标签
+taxonomies:
+  category: categories
+  tag: tags
+
+# 输出格式（含 RSS）
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  author: "你的名字"
+  description: "一个免费、稳定、长期运行的中文博客"
+  keywords: ["博客", "blog", "写作"]
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: true
+  ShowReadingTime: true
+  ShowDate: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  ShowTaxonomies: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  # Giscus 评论（需替换为你自己的仓库与 App ID）
+  giscus:
+    repo: "yourname/yourname.github.io"
+    repoID: "R_xxx"
+    category: "Announcements"
+    categoryID: "DIC_xxx"
+    mapping: "pathname"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
+
+menu:
+  main:
+    - identifier: archive
+      name: "归档"
+      url: "/archives/"
+      weight: 10
+    - identifier: tags
+      name: "标签"
+      url: "/tags/"
+      weight: 20
+    - identifier: search
+      name: "搜索"
+      url: "/search/"
+      weight: 30
+
+# 图床：建议图片放 static/images 或外链 GitHub 图床
+# 写作时粘贴图片自动上传由 PicGo 完成（见 docs/picgo-setup.md）
+
+markup:
+  highlight:
+    codeFences: true
+    lineNos: false
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true  # 允许内嵌 HTML（评论/图床场景需要）
+
+# RSS 配置
+rssLimit: 20
+
+# 搜索（Fuse.js）
+params:
+  ShowSearch: true
